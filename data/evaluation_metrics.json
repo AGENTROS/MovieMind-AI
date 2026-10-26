@@ -1,0 +1,38 @@
+{
+    "evaluation_version": 3,
+    "k": 5,
+    "sample_users_evaluated": 30,
+    "content_based": {
+        "precision": 3.33,
+        "recall": 0.13,
+        "hit_rate": 16.67,
+        "algorithm": "TF-IDF + Cosine Similarity",
+        "primary_strength": "Solves item cold start, domain specific similarity",
+        "limitation": "Overspecialization, cannot recommend across different genres"
+    },
+    "collaborative": {
+        "precision": 4.67,
+        "recall": 0.24,
+        "hit_rate": 20.0,
+        "rmse": 1.208,
+        "mae": 1.093,
+        "algorithm": "User-Based Collaborative Filtering (Cosine Similarity)",
+        "primary_strength": "Discovers cross-genre unexpected favorites, leverages community taste",
+        "limitation": "Suffers from cold start problem on new users/items"
+    },
+    "hybrid": {
+        "precision": 3.33,
+        "recall": 0.19,
+        "hit_rate": 13.33,
+        "algorithm": "Weighted Linear Hybrid (Content + Collaborative)",
+        "primary_strength": "Combines item metadata with collaborative user ratings",
+        "limitation": "Higher computational overhead than single models"
+    },
+    "dataset_stats": {
+        "total_movies": 9742,
+        "total_ratings": 100836,
+        "total_users": 610,
+        "rating_scale": "0.5 to 5.0",
+        "matrix_sparsity": "98.3%"
+    }
+}
